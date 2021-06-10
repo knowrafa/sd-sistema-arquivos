@@ -7,7 +7,6 @@ servers = {}
 
 
 class Directory(rpyc.Service):
-    @staticmethod
     def exposed_register(self, server_name, ip_adress, port_number):
         addr = (ip_adress, port_number)
         if server_name not in servers:
@@ -21,7 +20,6 @@ class Directory(rpyc.Service):
             failure = (False, "null")
             return failure
 
-    @staticmethod
     def exposed_update_register(self, server_name, ip_adress, port_number, token):
         if servers[server_name]['token'] == token:
             addr = (ip_adress, port_number)
@@ -39,7 +37,7 @@ class Directory(rpyc.Service):
             return True
         else:
             return False
-    @staticmethod
+
     def exposed_lookup(self, server_name):
         if server_name in servers:
             return servers[server_name]['ip']

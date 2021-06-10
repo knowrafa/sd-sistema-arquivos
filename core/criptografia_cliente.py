@@ -1,5 +1,5 @@
 import rpyc
-from constantes_rpyc import *
+from constRPYC import *
 
 class Client:
     conn_directory = rpyc.connect(DIR_SERVER, DIR_PORT)

@@ -1,6 +1,6 @@
 from random import randint
 import rpyc
-from constantes_rpyc import *
+from constRPYC import *
 from rpyc.utils.server import ThreadedServer
 
 servers = {}

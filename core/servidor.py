@@ -1,6 +1,6 @@
 import rpyc
 from socket import gethostbyname, gethostname
-from constantes_rpyc import *
+from constRPYC import *
 from rpyc.utils.server import ThreadedServer
 
 

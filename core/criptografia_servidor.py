@@ -1,7 +1,7 @@
 from random import randint
 import rpyc
 from socket import gethostbyname,gethostname
-from constantes_rpyc import *
+from constRPYC import *
 from rpyc.utils.server import ThreadedServer
 
 
@@ -21,6 +21,7 @@ class ServerCrypt(rpyc.Service): #alterar ServerCrypt para o nome do servidor
 
     def exposed_encrypt(self, text):
         pub_key = randint(1, 25)
+        # uuid.uuid4()
         enc_message = self.__encrypt(text, pub_key)
         return (enc_message, pub_key)
 
